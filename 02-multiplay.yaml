@@ -4,7 +4,7 @@
   tasks:
   - name: first task
     ansible.builtin.debug:
-    msg: "hello harsha"
+      msg: "hello harsha"
 
 - name: multiplays2
   hosts: local
@@ -12,4 +12,4 @@
   tasks:
   - name: task2second task
     ansible.builtin.debug:
-    msg: hello janith
+      msg: hello janith
