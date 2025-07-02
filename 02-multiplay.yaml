@@ -1,5 +1,5 @@
 - name: multiplays1
-  host: local
+  hosts: local
   connection: local
   tasks:
     - name: task1
@@ -7,7 +7,7 @@
       msg: hello harsha
 
 - name: multiplays2
-  host: local
+  hosts: local
   connection: local
   tasks:
     - name: task2
