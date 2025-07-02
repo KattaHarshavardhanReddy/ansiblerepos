@@ -2,14 +2,14 @@
   hosts: local
   connection: local
   tasks:
-    - name: task1
-      ansible.builtin.debug:
-      msg: hello harsha
+  - name: first task
+    ansible.builtin.debug:
+    msg: "hello harsha"
 
 - name: multiplays2
   hosts: local
   connection: local
   tasks:
-    - name: task2
-      ansible.builtin.debug:
-      msg: hello janith
+  - name: task2second task
+    ansible.builtin.debug:
+    msg: hello janith
