@@ -6,6 +6,6 @@
     ansible.builtin.packages:
       name: "{{ iteam }}"
   loop:
-    - git
-    - curl
-    - wget
+  - git
+  - curl
+  - wget
