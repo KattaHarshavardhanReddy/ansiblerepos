@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   tasks:
-  - name : install packages using loops
+  - name: install packages using loops
     ansible.builtin.packages:
       name: "{{ iteam }}"
   loop:
