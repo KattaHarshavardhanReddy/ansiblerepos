@@ -1,6 +1,7 @@
 - name: less than or greater than
   hosts: web
-  become: yes # -b its like root access sudo
+  become: yes
+  gather_facts: false # -b its like root access sudo
   
   vars_prompt:
     #my_number1: 8
