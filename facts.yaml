@@ -1,6 +1,6 @@
 - name: less than or greater than
-  hosts: local
-  connection: local # -b its like root access sudo
+  hosts: web
+  become: yes # -b its like root access sudo
   
   vars_prompt:
     #my_number1: 8
