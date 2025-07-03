@@ -2,7 +2,7 @@
   hosts: local
   connection: local # -b its like root access sudo
   vars:
-    my_number1: 15
+    my_number1: 8
   #my_number2: 10
 
   tasks:
