@@ -1,0 +1,18 @@
+- name: less than or greater than
+  hosts: web
+  become: yes # -b its like root access sudo
+  vars:
+  my_number1: 15
+  #my_number2: 10
+
+  tasks:
+  - name: greater than
+    ansible.builtin.debug:
+      msg: "the {{number}} is greater 10"
+    when: my_number1 >= 10
+
+  tasks:
+  - name: less than
+    ansible.builtin.debug:
+      msg: "the {{number}} is less 10"
+    when: my_number1 <= 10
