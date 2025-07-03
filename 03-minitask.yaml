@@ -9,7 +9,7 @@
     ansible.builtin.package:
       name: nginx
       state: present
-      when: OS family == "RedHat"
+    when: OS family == "RedHat"
 
   - name: Start the nginx
     ansible.builtin.service:
