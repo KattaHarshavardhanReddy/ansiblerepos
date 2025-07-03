@@ -1,8 +1,10 @@
 - name: less than or greater than
   hosts: local
   connection: local # -b its like root access sudo
-  vars:
-    my_number1: 8
+  vars_prompt:
+    #my_number1: 8
+  - name: my_number1
+    prompt: please enter the number
   #my_number2: 10
 
   tasks:
