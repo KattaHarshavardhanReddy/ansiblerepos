@@ -8,9 +8,10 @@
   - name: even
     ansible.builtin.debug:
       msg: "{{nums}} is even"
-    when: (nums | int) % 2
+    when: (nums | int) % 2 == 0
 
   - name: odd 
     ansible.builtin.debug:
-      msg: "{{nums}} is even"
-    when: (nums | int) % 2
+      msg: "{{nums}} is odd"
+    when: (nums | int) % 2 != 0
+    
