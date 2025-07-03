@@ -5,7 +5,7 @@
   - name: install packages using loops
     ansible.builtin.packages:
       name: "{{ iteam }}"
-      satae: present
+      state: present
   loop:
   - git
   - curl
