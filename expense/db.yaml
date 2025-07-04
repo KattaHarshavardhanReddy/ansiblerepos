@@ -5,8 +5,12 @@
 
   - name: Install pip module
     ansible.builtin.pip:
-      name: PyMySQL
+      name: "{{ item }}"
       executable: pip3 
+    loop:
+      - PyMySQL
+      - cryptography
+
 
   - name: Install mysql server db
     ansible.builtin.package:
