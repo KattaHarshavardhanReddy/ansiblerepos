@@ -1,0 +1,17 @@
+- name: install nodeJS package
+  hosts: be
+  become: yes
+
+  tasks:
+
+  - name: disable existing nodeJS
+    ansible.builtin.command: "dnf module disable nodejs -y"
+
+  - name: enable nodeJS
+    ansible.builtin.command: "dnf module enable nodejs:20 -y"
+
+  - name: install nodeJS
+    ansible.builtin.packge:
+      name: nodeJS
+      state: present
+
