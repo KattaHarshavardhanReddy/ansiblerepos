@@ -8,6 +8,14 @@
 
   tasks:
 
+  - name: Install pip module
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3 
+    loop:
+      - PyMySQL
+      - cryptography
+
   - name: disable existing nodeJS
     ansible.builtin.command: "dnf module disable nodejs -y"
 
