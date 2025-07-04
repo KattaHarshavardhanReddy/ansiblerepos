@@ -15,10 +15,15 @@
       state: started
       enabled: yes
 
-  - name: delete the file
+  - name: delete the existing file
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
+
+  - name: create html dir
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
 
   - name: Download file from a file path
     ansible.builtin.get_url:
