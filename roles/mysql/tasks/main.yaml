@@ -1,6 +1,4 @@
 
-tasks:
-
   - name: Install pip module
     ansible.builtin.pip:
       name: "{{ item }}"
