@@ -1,0 +1,10 @@
+- name: install my sql server
+  hosts: db
+  become: yes
+  roles:
+    mysql
+
+  
+
+
+      
