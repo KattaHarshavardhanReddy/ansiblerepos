@@ -1,0 +1,10 @@
+- name: install nodeJS package
+  hosts: be
+  become: yes
+  roles:
+  - be
+
+  
+
+
+
