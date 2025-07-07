@@ -57,7 +57,7 @@
       name: all
       login_user: root
       login_password: "{{be_pw}}"
-      login_host: 172.31.20.247
+      login_host: 172.31.23.118
       target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
