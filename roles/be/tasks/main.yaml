@@ -43,7 +43,7 @@
 
 - name: Copy file with owner and permissions
   ansible.builtin.template:
-      src: be.service
+      src: be.service.j2
       dest: /etc/systemd/system/backend.service
 
 - name: install mysql
