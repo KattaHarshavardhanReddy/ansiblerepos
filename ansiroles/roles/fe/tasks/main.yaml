@@ -9,26 +9,31 @@
       state: started
       enabled: yes
 
-  - name: delete the existing file
-    ansible.builtin.file:
-      path: /usr/share/nginx/html
-      state: absent
+  - name: include from common directory 
+    include_role:
+      name: common
+      tasks_from: main 
 
-  - name: create html dir
-    ansible.builtin.file:
-      path: /usr/share/nginx/html
-      state: directory
+  # - name: delete the existing file
+  #   ansible.builtin.file:
+  #     path: /usr/share/nginx/html
+  #     state: absent
 
-  - name: Download file from a file path
-    ansible.builtin.get_url:
-      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-      dest: /tmp/frontend.zip
+  # - name: create html dir
+  #   ansible.builtin.file:
+  #     path: /usr/share/nginx/html
+  #     state: directory
 
-  - name: Unzip the file
-    ansible.builtin.unarchive:
-      src: /tmp/frontend.zip
-      dest: /usr/share/nginx/html
-      remote_src: yes
+  # - name: Download file from a file path
+  #   ansible.builtin.get_url:
+  #     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+  #     dest: /tmp/frontend.zip
+
+  # - name: Unzip the file
+  #   ansible.builtin.unarchive:
+  #     src: /tmp/frontend.zip
+  #     dest: /usr/share/nginx/html
+  #     remote_src: yes
 
   - name: copy frontend service
     ansible.builtin.template:
