@@ -1,0 +1,15 @@
+- name: multiplays1
+  hosts: local
+  connection: local
+  tasks:
+  - name: first task
+    ansible.builtin.debug:
+      msg: "hello harsha"
+
+- name: multiplays2
+  hosts: local
+  connection: local
+  tasks:
+  - name: task2second task
+    ansible.builtin.debug:
+      msg: hello janith

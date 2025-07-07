@@ -1,0 +1,13 @@
+- name: install  and run nginx
+  hosts: web
+  become: yes # -b its like root access sudo
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: Start the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes
