@@ -42,7 +42,7 @@
       path: /app
 
 - name: Copy file with owner and permissions
-  ansible.builtin.copy:
+  ansible.builtin.template:
       src: be.service
       dest: /etc/systemd/system/backend.service
 
