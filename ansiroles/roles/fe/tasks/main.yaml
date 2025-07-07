@@ -37,4 +37,4 @@
     notify:
     - restart nginx
 
-  - name: restart the service
+
