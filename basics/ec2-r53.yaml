@@ -32,12 +32,24 @@
 
     register: ec2_info
 
-  - name: print the results
-    ansible.builtin.debug:
-      msg: " {{ ec2_info }}"
+  # - name: print the results
+  #   ansible.builtin.debug:
+  #     msg: " {{ ec2_info }}"
 
   - name: print private ip's 
     ansible.builtin.debug:
       msg: "{{ item.instances[0].private_ip_address }}"
-    
+  
+    loop: "{{ ec2_info.results }}"
+
+  - name: create r53 instances
+    amazon.aws.route53:
+      state: present
+      zone: katta.blog
+      record: "{{ item.item }}.katta.blog"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
     loop: "{{ ec2_info.results }}"
