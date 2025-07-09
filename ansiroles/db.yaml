@@ -1,6 +1,8 @@
 - name: install my sql server
   hosts: db
   become: yes
+  vars_file:
+  - roles/mysql/vars/vault.yaml
   roles:
   - mysql
 
